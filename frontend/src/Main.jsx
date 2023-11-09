@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
+import axios from 'axios';
 export function Main() {
+    const client = axios.create()
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [reason, setReason] = useState('');
@@ -8,6 +9,14 @@ export function Main() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(`Age: ${age}, Reason: ${reason}`);
+        client.post('http://localhost:8000/survey/submit/', {
+            "age": age,
+            "reason": reason
+        })
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+        })
         // You can replace the console.log statement with your own code to submit the form data to a server or store it in state.
     };
 
@@ -30,23 +39,23 @@ export function Main() {
                 </label>
                 <br />
                 <label>
-                    <input type="radio" name="reason" value="데이터 분석" checked={reason === "데이터 분석"} onChange={(event) => setReason(event.target.value)} />
-                    데이터 분석
+                    <input type="radio" name="reason" value="프로그램 개발" checked={reason === "프로그램 개발"} onChange={(event) => setReason(event.target.value)} />
+                    프로그램 개발
                 </label>
                 <br />
                 <label>
-                    <input type="radio" name="reason" value="이미지/음성 처리" checked={reason === "이미지/음성 처리"} onChange={(event) => setReason(event.target.value)} />
-                    이미지/음성 처리
+                    <input type="radio" name="reason" value="정보 탐색" checked={reason === "정보 탐색"} onChange={(event) => setReason(event.target.value)} />
+                    정보 탐색
                 </label>
                 <br />
                 <label>
-                    <input type="radio" name="reason" value="자연어 처리" checked={reason === "자연어 처리"} onChange={(event) => setReason(event.target.value)} />
-                    자연어 처리
+                    <input type="radio" name="reason" value="아이디어 구상" checked={reason === "아이디어 구상"} onChange={(event) => setReason(event.target.value)} />
+                    아이디어 구상
                 </label>
                 <br />
                 <label>
-                    <input type="radio" name="reason" value="게임 개발" checked={reason === "게임 개발"} onChange={(event) => setReason(event.target.value)} />
-                    게임 개발
+                    <input type="radio" name="reason" value="오락" checked={reason === "오락"} onChange={(event) => setReason(event.target.value)} />
+                    오락
                 </label>
                 <br />
                 <label>

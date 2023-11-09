@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 /* existing code */
 ul {
     display: flex;
@@ -9,12 +9,19 @@ ul {
 
 li {
     margin: 0 10px;
+    transition: 0.2s;
 }
 
 li a {
     text-decoration: none;
     text-decoration-line: none;
     color: black;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+}
+
+li:hover {
+    transform: scale(1.05);
 }
 
 .articles {
