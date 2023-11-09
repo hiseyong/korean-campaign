@@ -9,7 +9,7 @@ export function Main() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(`Age: ${age}, Reason: ${reason}`);
-        client.post('http://localhost:8000/survey/submit/', {
+        client.post('/survey/submit/', {
             "age": age,
             "reason": reason
         })
