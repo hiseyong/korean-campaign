@@ -1,0 +1,52 @@
+
+/* existing code */
+ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 0 10px;
+}
+
+li a {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: black;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.article {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.article:hover {
+    transform: scale(1.05);
+}
+
+.article img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.article h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+
